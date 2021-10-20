@@ -40,10 +40,58 @@
 // console.log(val5);
 
 // template文字列 文字列の中に変数を組み込みめるようになったES2015
-const name = "じゃけぇ";
-const age = 28;
+// const name = "じゃけぇ";
+// const age = 28;
 //「私の名前はじゃけぇです。年齢は28歳です。」
 //従来の方法
-const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
-console.log(message1 + "2");
-console.log(`私の名前は${name}です。年齢は${age}です。`);
+// const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
+// console.log(message1 + "2");
+// console.log(`私の名前は${name}です。年齢は${age}です。`);
+
+//アロー関数
+//従来の関数
+// function func1(str){
+//   return str;
+// };
+// const func1 = function(str){
+//   return str
+// }
+// console.log(func1("func1です"));
+
+//アロー関数
+// const func2 = (str) => {
+//     return str;
+// }
+// const func2 = (str) => str;
+// console.log(func2("func2です"));
+
+// const func3 = (num1, num2) => {
+//   return num1 + num2;
+// }
+
+// console.log(func3(20,30));
+
+//分割代入
+// const myProfile = {
+//   name: "じゃけぇ",
+//   age: 28
+// }
+
+// const message1 = `名前は${myProfile.name}です。年齢は、${myProfile.age}です。`;
+// console.log(message1);
+//長くなると大変なのでそれを分割して代入することができる。
+
+//分割代入方法 下記のようにして分割することができる。
+// const { name, age} = myProfile;
+// const message2 = `名前は${name}です。年齢は、${age}です。`;
+// console.log(message2);
+//分割代入で入力するようにできる。
+//指定のプロパティを抜き出して使うことができてコード自体が簡潔になって使用できる。
+//分割代入は配列にも使用することができる。
+const myProfile1 = ["じゃけぇ", 28];
+const message3 = `名前は、${myProfile1[0]}です。年齢は、${myProfile1[1]}です。`;
+console.log(message3);
+//配列の場合は名前が決まっていないので順番で受け取っていく。
+const [name, age] = myProfile1;
+const message4 = `名前は、たぶん${name}です。年齢は、${age}です。`;
+console.log(message4);
