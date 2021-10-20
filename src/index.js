@@ -136,14 +136,14 @@
 // console.log(arr3);//分割の残ったものをまとめることができる。
 
 //配列のコピー、結合でもスプレッド構文を使用することができる。
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 //arr4をコピーしたものを作成
-const arr6 = [...arr4];
+// const arr6 = [...arr4];
 //上記のようにするとコピーすることができる。
-arr6[0] = 100;
-console.log(arr6);
-console.log(arr4);
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4);
 //arr4にarr6の変更は影響しない。
 
 //arr4,arr5の両方を結合する時にもスプレッド構文を使用することができる。
@@ -162,3 +162,51 @@ console.log(arr4);
 //参照元のarr4の値も変更されてしまう。
 //=でコピーしてしまうとarr4の参照先をarr8も参照することになってしまうのでarr4も影響を受けてしまう。
 //なので、スプレッド構文を使用してコピーする方がいい。
+
+//map, filterを使った配列の処理
+const nameArr = ["田中", "山田", "じゃけぇ"];
+//配列は何番目かがよく使用される。
+//配列をループしてそれぞれの配列を表示したり、処理するのは通常はfor文を使用していた。
+// for(let i = 0; i < nameArr.length; i ++){
+//   console.log(nameArr[i]);
+// }
+//配列が順番に処理されて配列が順番的に表示される
+//これが従来の方法。 mapを使ってやってみる。
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+//そのままreturnしていると入ってきた値をそのまま返してきて、情報が入った配列が表示される。同じような結果になる。
+//returnに返ってきたもので新しい配列を作ることができる。
+//mapの中にはnameArrの中身が入ってくる。
+//引数に配列の中身が順番に入ってくる。
+// console.log(nameArr2);
+//mapでfor文のようにするとどうなるか
+//mapで何番目を表示するにはどうするのか。第二引数で使用できる。
+//mapの時の１つ目の配列は、配列の実際の要素。
+//2つ目の要素は、順番が0から入ってくる。
+// nameArr.map((name,i) => console.log(`${i + 1}番目は${name}です。`));
+//このようにすることでややこしい書き方を実現することができる。
+//console.logを使うことでそれぞれを表示することもできる。
+//2つの使い方がある。
+
+//実践的なmapの使用方法。
+//自分の以外にさんつけるようにする。
+const newNameArr = nameArr.map((name) => {
+  if (name === "じゃけぇ") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
+//新しい配列をつくることができる。
+
+//filterについて確認。
+// const numArr = [1,2,3,4,5];
+//数字の配列から対象の数値を抽出することができる。
+//filterの場合はreturnに条件式を書いてそれに一致するものを返すという動きになる。
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 1;
+// })
+//returnに適合したものを新しい配列にすることができる。
+// console.log(newNumArr);
