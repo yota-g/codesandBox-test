@@ -164,7 +164,7 @@
 //なので、スプレッド構文を使用してコピーする方がいい。
 
 //map, filterを使った配列の処理
-const nameArr = ["田中", "山田", "じゃけぇ"];
+// const nameArr = ["田中", "山田", "じゃけぇ"];
 //配列は何番目かがよく使用される。
 //配列をループしてそれぞれの配列を表示したり、処理するのは通常はfor文を使用していた。
 // for(let i = 0; i < nameArr.length; i ++){
@@ -191,14 +191,14 @@ const nameArr = ["田中", "山田", "じゃけぇ"];
 
 //実践的なmapの使用方法。
 //自分の以外にさんつけるようにする。
-const newNameArr = nameArr.map((name) => {
-  if (name === "じゃけぇ") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "じゃけぇ") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
 //新しい配列をつくることができる。
 
 //filterについて確認。
@@ -210,3 +210,24 @@ console.log(newNameArr);
 // })
 //returnに適合したものを新しい配列にすることができる。
 // console.log(newNumArr);
+
+//25三項演算子 ?:
+//ある条件？true:false
+// const val1 = 1 > 0 ? 'trueです。':'falseです';
+// console.log(val1);
+//ifelseを１行で書くことができる。
+// const num = 1300;
+// const num = '1300';
+// console.log(num.toLocaleString());
+//3桁ごとにカンマ区切りをしてくれるもの。文字列が来ると変更できない。数値でないといけない。
+//数値の時は3桁区切りで表示して、そうでない時は、エラーみたいに表示してあげたい。
+// const formattedNum = typeof num === 'number' ? num.toLocaleString(): '数値を入力してください。';
+// console.log(formattedNum);
+
+//関数のreturn部分に三項演算子を使用する。
+
+// const check = (num1, num2) => {
+//   return num1 + num2 > 100 ? '100を超えています' : '許容範囲内です。'
+// }
+
+// console.log(check(30,40));
