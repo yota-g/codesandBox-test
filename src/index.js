@@ -88,10 +88,22 @@
 //分割代入で入力するようにできる。
 //指定のプロパティを抜き出して使うことができてコード自体が簡潔になって使用できる。
 //分割代入は配列にも使用することができる。
-const myProfile1 = ["じゃけぇ", 28];
-const message3 = `名前は、${myProfile1[0]}です。年齢は、${myProfile1[1]}です。`;
-console.log(message3);
+// const myProfile1 = ["じゃけぇ", 28];
+// const message3 = `名前は、${myProfile1[0]}です。年齢は、${myProfile1[1]}です。`;
+// console.log(message3);
 //配列の場合は名前が決まっていないので順番で受け取っていく。
-const [name, age] = myProfile1;
-const message4 = `名前は、たぶん${name}です。年齢は、${age}です。`;
-console.log(message4);
+// const [name, age] = myProfile1;
+// const message4 = `名前は、たぶん${name}です。年齢は、${age}です。`;
+// console.log(message4);
+//配列の場合は順番に気をつけないといけない。
+
+//デフォルト値,引数など
+const sayHello = (name = "ゲスト") => console.log(`こんにちは、${name}さん！`);
+sayHello("じゃけぇ");
+//この関数を引数を消すと引数部分がundefinedとなってしまうのでよくわからないようになってしまう。
+//いけていないのでbugになってしまうかもしれないので、関数が呼び出された場合はデフォルトを設定すること。
+//引数の後ろに=を入れてデフォルト値を代入することができる。
+sayHello();
+//引数がないのでデフォルト値が代入される。
+//関数の引数や分割代入の部分にも使用することができる。
+//変数の後ろに=で何か書いていたら初期値になる。
