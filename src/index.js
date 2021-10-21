@@ -17,8 +17,24 @@ const onClickAdd = () => {
   // console.log(p);
   //liの下にdiv、divの下にpを入れていく。
   let liContent = li.appendChild(div);
+  //buttonタグを作成する。
+  const completeButton = document.createElement("button");
+  completeButton.innerText = "完了";
+  completeButton.addEventListener("click", () => {
+    alert();
+  });
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "削除";
+  deleteButton.addEventListener("click", () => {
+    //押された削除ボタンの親タグを未完了から削除
+    const deleteTarget = deleteButton.parentNode.parentNode;
+    //  console.log(deleteTarget);
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
+  });
+  //子要素に追加していく。
   liContent.appendChild(p);
-  liContent.appendChild();
+  liContent.appendChild(completeButton);
+  liContent.appendChild(deleteButton);
   // console.log(li);
   //divタグの子要素に各要素を設定。
   document.getElementById("incomplete-list").appendChild(li);
