@@ -21,7 +21,9 @@ const onClickAdd = () => {
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert();
+    const completeItem = completeButton.parentNode;
+    const completeTarget = completeItem.parentNode;
+    document.getElementById("complete-list").appendChild(completeTarget);
   });
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
@@ -38,6 +40,11 @@ const onClickAdd = () => {
   // console.log(li);
   //divタグの子要素に各要素を設定。
   document.getElementById("incomplete-list").appendChild(li);
+};
+
+//未完了リストから指定の要素を削除
+const delteFromIncompleteList = (target) => {
+  document.getElementById.length("imcomplete-list").removeChild(deleteTarget);
 };
 
 document
